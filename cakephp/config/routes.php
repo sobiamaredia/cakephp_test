@@ -91,3 +91,10 @@ $routes->scope('/', function (RouteBuilder $builder) {
  * ```
  */
 
+
+$routes->scope('/', function (RouteBuilder $routes) {
+    $routes->setExtensions(['json']);
+    $routes->get('contacts', ['controller' => 'Contacts', 'action' => 'index']);
+    $routes->get('contacts', ['controller' => 'Contacts', 'action' => 'index_ext']);
+    $routes->post('contacts', ['controller' => 'Contacts', 'action' => 'add']);
+});
